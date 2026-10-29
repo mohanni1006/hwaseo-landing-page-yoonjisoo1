@@ -65,7 +65,7 @@ if (phoneInput) {
   });
 }
 
-// 5. 팝업창 제어 (1차 혜택 팝업 -> 2차 유튜브 영상 팝업 순차 진행)
+// 5. 팝업창 제어 (단일 팝업 -> 닫기 시 즉시 메인 페이지 노출)
 function openPopup() {
   const modal = document.getElementById('popupModal');
   if (modal) {
@@ -73,36 +73,10 @@ function openPopup() {
   }
 }
 
-// 1차 팝업 닫기 누르면 -> 2차 유튜브 영상 팝업 열기
 function closePopup() {
   const modal = document.getElementById('popupModal');
   if (modal) {
     modal.style.display = 'none';
-  }
-  openVideoPopup();
-}
-
-// 2차 유튜브 팝업 열기 및 자동재생 시작
-function openVideoPopup() {
-  const videoModal = document.getElementById('videoPopupModal');
-  const iframe = document.getElementById('popupYoutubeIframe');
-  if (videoModal) {
-    videoModal.style.display = 'flex';
-  }
-  if (iframe) {
-    iframe.src = "https://www.youtube.com/embed/RyQxWm-hc60?autoplay=1&mute=1&loop=1&playlist=RyQxWm-hc60&playsinline=1&controls=1&rel=0";
-  }
-}
-
-// 2차 유튜브 팝업 닫기 누르면 -> 동영상 정지 및 메인 화면 노출
-function closeVideoPopup() {
-  const videoModal = document.getElementById('videoPopupModal');
-  const iframe = document.getElementById('popupYoutubeIframe');
-  if (videoModal) {
-    videoModal.style.display = 'none';
-  }
-  if (iframe) {
-    iframe.src = "";
   }
 }
 
